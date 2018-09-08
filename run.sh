@@ -1,3 +1,3 @@
 #!/bin/bash
 set -x
-exec docker run --net=host --rm -d easyeda-autorouter
+exec docker run --name=easyeda-autorouter --net=host --rm -d easyeda-autorouter
