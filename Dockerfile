@@ -5,7 +5,7 @@ RUN useradd -r -m router -d /router
 USER router
 
 RUN wget 'https://image.easyeda.com/files/EasyEDA-Router-latest.7z' -O '/tmp/EasyEDA-Router.7z'
-RUN cd /router && nice 7z x '/tmp/EasyEDA-Router.7z' && mv 'EasyEDA'* 'unpacked' && rm '/tmp/EasyEDA-Router.7z'
+RUN cd /router && nice 7z x '/tmp/EasyEDA-Router.7z'
 
-RUN chmod +x "/router/unpacked/lin64.sh"
-CMD cd /router/unpacked && nice -n20 ./lin64.sh
+RUN chmod +x "/router/lin64.sh"
+CMD cd /router && nice -n20 ./lin64.sh
