@@ -8,5 +8,8 @@ set -x
 
 cd "$P"
 
-docker pull debian:9
-docker build . -t easyeda-autorouter
+if ! test -e 'EasyEDA-Router-latest.7z'; then
+	wget 'https://image.easyeda.com/files/EasyEDA-Router-latest.7z' -O EasyEDA-Router-latest.7z
+fi
+
+docker build --pull . -t easyeda-autorouter
